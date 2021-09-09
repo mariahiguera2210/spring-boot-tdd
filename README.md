@@ -5,7 +5,7 @@
 
 **Learning Objectives**
 
-- Explain what TDD is.
+- Explain what [TDD](https://www.wikiwand.com/en/Test-driven_development) is.
 - Implement Unit Test using JUnit & Mockito.
 - Implement a REST API using TDD.
 
@@ -16,7 +16,7 @@ Watch the following video [How to be Proactive in Life](https://www.youtube.com/
 
 **Main Topics**
 
-* TDD.
+* [TDD](https://www.wikiwand.com/en/Test-driven_development).
 * Unit Test.
 * Mock.
 
