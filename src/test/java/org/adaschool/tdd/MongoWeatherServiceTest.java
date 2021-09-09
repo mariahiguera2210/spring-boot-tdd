@@ -1,5 +1,6 @@
 package org.adaschool.tdd;
 
+import org.adaschool.tdd.controller.weather.dto.WeatherReportDto;
 import org.adaschool.tdd.exception.WeatherReportNotFoundException;
 import org.adaschool.tdd.repository.WeatherReportRepository;
 import org.adaschool.tdd.repository.document.GeoLocation;
@@ -16,6 +17,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Date;
 import java.util.Optional;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
@@ -31,6 +34,17 @@ class MongoWeatherServiceTest
     public void setup()
     {
         weatherService = new MongoWeatherService( repository );
+    }
+
+    @Test
+    void createWeatherReportCallsSaveOnRepository()
+    {
+        double lat = 4.7110;
+        double lng = 74.0721;
+        GeoLocation location = new GeoLocation( lat, lng );
+        WeatherReportDto weatherReportDto = new WeatherReportDto( location, 35f, 22f, "tester", new Date() );
+        weatherService.report( weatherReportDto );
+        verify( repository ).save( any( WeatherReport.class ) );
     }
 
     @Test
