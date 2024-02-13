@@ -33,6 +33,10 @@ public class WeatherReport
         this.created = created;
     }
 
+    public WeatherReport() {
+
+    }
+
     public GeoLocation getGeoLocation()
     {
         return geoLocation;

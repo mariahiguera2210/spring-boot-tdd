@@ -10,6 +10,7 @@ public interface WeatherService
 {
     WeatherReport report( WeatherReportDto weatherReportDto );
 
+
     WeatherReport findById( String id );
 
     List<WeatherReport> findNearLocation( GeoLocation geoLocation, float distanceRangeInMeters );
